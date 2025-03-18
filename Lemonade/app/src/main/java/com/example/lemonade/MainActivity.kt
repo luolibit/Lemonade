@@ -84,6 +84,13 @@ fun LemonadeButtonAndImage(modifier: Modifier = Modifier
         3 -> stringResource(R.string.image3)
         else -> stringResource(R.string.image4)
     }
+    val textDescription = when(click){
+        1 -> stringResource(R.string.descImage1)
+        2 -> stringResource(R.string.descImage2)
+        3 -> stringResource(R.string.descImage3)
+        else -> stringResource(R.string.descImage4)
+    }
+
     fun nextImage(){
         if (click >= 4) {
             click = 1
@@ -99,7 +106,7 @@ fun LemonadeButtonAndImage(modifier: Modifier = Modifier
         Button(onClick =  { nextImage() }) {
             Image(
                 painter = painterResource(imageResource),
-                contentDescription = click.toString()
+                contentDescription = textDescription
             )
         }
         Spacer(modifier = Modifier.height(16.dp))
